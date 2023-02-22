@@ -1,0 +1,1 @@
+/home/cisnux/Apps Development/Bangkit 2023/Kotlin Fundamentals/data_class/build/classes/kotlin/main/MainKt.class:/home/cisnux/Apps Development/Bangkit 2023/Kotlin Fundamentals/data_class/build/classes/kotlin/main/data/model/AnotherUser.class:/home/cisnux/Apps Development/Bangkit 2023/Kotlin Fundamentals/data_class/build/classes/kotlin/main/data/model/User.class
