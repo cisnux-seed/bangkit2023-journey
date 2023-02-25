@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">VolumeCalculator</string>
+    <string name="length">Panjang</string>
+    <string name="enter_length">Masukkan Panjang Balok</string>
+    <string name="hitung">Hitung</string>
+    <string name="width">Lebar</string>
+    <string name="height">Tinggi</string>
+    <string name="enter_width">Masukkan Lebar Balok</string>
+    <string name="enter_height">Masukkan Tinggi Balok</string>
+</resources>
