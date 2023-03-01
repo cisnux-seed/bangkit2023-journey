@@ -19,31 +19,31 @@ import kotlin.system.measureTimeMillis
 //}
 
 //- async
-//fun main() = runBlocking {
-//    val timeOne = measureTimeMillis {
-//        val capital = getCapital()
-//        val income = getIncome()
-//        println("Your profit is ${income - capital}")
-//    }
-//
-//    val timeTwo = measureTimeMillis {
-//        val capital = async { getCapital() }
-//        val income = async { getIncome() }
-//        println("Your profit is ${income.await() - capital.await()}")
-//    }
-//
-//    println("Completed in $timeOne ms vs $timeTwo ms")
-//}
+fun main() = runBlocking {
+    val timeOne = measureTimeMillis {
+        val capital = getCapital()
+        val income = getIncome()
+        println("Your profit is ${income - capital}")
+    }
 
-//suspend fun getCapital(): Int {
-//    delay(1000L)
-//    return 50000
-//}
-//
-//suspend fun getIncome(): Int {
-//    delay(1000L)
-//    return 75000
-//}
+    val timeTwo = measureTimeMillis {
+        val capital = async { getCapital() }
+        val income = async { getIncome() }
+        println("Your profit is ${income.await() - capital.await()}")
+    }
+
+    println("Completed in $timeOne ms vs $timeTwo ms")
+}
+
+suspend fun getCapital(): Int {
+    delay(1000L)
+    return 50000
+}
+
+suspend fun getIncome(): Int {
+    delay(1000L)
+    return 75000
+}
 
 // - job
 //@InternalCoroutinesApi
@@ -115,13 +115,13 @@ import kotlin.system.measureTimeMillis
 /**
  * use [Channel] to sharing resources between the coroutines
  * */
-fun main() = runBlocking(CoroutineName("main")) {
-    val channel = Channel<Int>()
-    launch(CoroutineName("v1coroutine")){
-        println("Sending from ${Thread.currentThread().name}")
-        for (x in 1..5) channel.send(x * x)
-    }
-
-    repeat(5) { println(channel.receive()) }
-    println("received in ${Thread.currentThread().name}")
-}
+//fun main() = runBlocking(CoroutineName("main")) {
+//    val channel = Channel<Int>()
+//    launch(CoroutineName("v1coroutine")){
+//        println("Sending from ${Thread.currentThread().name}")
+//        for (x in 1..5) channel.send(x * x)
+//    }
+//
+//    repeat(5) { println(channel.receive()) }
+//    println("received in ${Thread.currentThread().name}")
+//}
