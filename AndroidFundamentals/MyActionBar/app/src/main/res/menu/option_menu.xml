@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<!--
+Elemen showAsAction menggunakan 2 pilihan, yaitu collapseActionView
+dan always. collapseActionView akan menunjukkan bahwa item bersifat collapsible,
+sehingga dapat disembunyikan.
+Sementara itu, always akan membuat icon item selalu ditampilkan.
+-->
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_baseline_search_white_24px"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|always" />
+    <group>
+        <item
+            android:id="@+id/menu1"
+            android:icon="@drawable/ic_announcement_white_24"
+            android:title="@string/menu_1"
+            app:showAsAction="always"
+            tools:ignore="AlwaysShowAction" />
+
+        <item
+            android:id="@+id/menu2"
+            android:title="@string/menu_2" />
+    </group>
+</menu>

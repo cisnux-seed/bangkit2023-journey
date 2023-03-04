@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="dev.cisnux.mynavigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <!--app:launchSingletTop means that if if you launch an activity that is already on top,
+        it won't be created again just resumed.
+        - enterAnim, yaitu animasi ketika masuk.
+        - exitAnim, yaitu animasi ketika keluar (berpindah ke fragment lain).
+        - popEnterAnim, yaitu animasi ketika masuk dari back stack.
+        - popExitAnim, yaitu animasi ketika keluar dari back stack.
+        -->
+        <action
+            android:id="@+id/action_homeFragment_to_profileActivity"
+            app:destination="@id/profileActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="dev.cisnux.mynavigation.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_detailCategoryFragment"
+            app:destination="@id/detailCategoryFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="dev.cisnux.mynavigation.ProfileActivity"
+        android:label="activity_profile"
+        tools:layout="@layout/activity_profile">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://www.dicoding.com/profile" />
+    </activity>
+    <fragment
+        android:id="@+id/detailCategoryFragment"
+        android:name="dev.cisnux.mynavigation.DetailCategoryFragment"
+        android:label="fragment_detail_category"
+        tools:layout="@layout/fragment_detail_category">
+        <argument
+            android:name="name"
+            android:defaultValue="default name"
+            app:argType="string" />
+        <argument
+            android:name="stock"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="https://www.dicoding.com/detail/{name}" />
+        <!--  app:popUpToInclusive is same as Intent.FLAG_ACTIVITY_CLEAR_TOP      -->
+        <action
+            android:id="@+id/action_detailCategoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
