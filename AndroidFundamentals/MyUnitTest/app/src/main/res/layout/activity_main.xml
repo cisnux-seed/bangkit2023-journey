@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/length"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/length"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_length"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:lines="1"
+        app:layout_constraintEnd_toEndOf="@+id/length"
+        app:layout_constraintStart_toStartOf="@+id/length"
+        app:layout_constraintTop_toBottomOf="@+id/length"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/width"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/width"
+        app:layout_constraintEnd_toEndOf="@+id/edt_length"
+        app:layout_constraintStart_toStartOf="@+id/edt_length"
+        app:layout_constraintTop_toBottomOf="@+id/edt_length" />
+
+    <EditText
+        android:id="@+id/edt_width"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:lines="1"
+        app:layout_constraintEnd_toEndOf="@+id/width"
+        app:layout_constraintStart_toStartOf="@+id/width"
+        app:layout_constraintTop_toBottomOf="@+id/width"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/height"
+        app:layout_constraintEnd_toEndOf="@+id/edt_width"
+        app:layout_constraintStart_toStartOf="@+id/edt_width"
+        app:layout_constraintTop_toBottomOf="@+id/edt_width" />
+
+    <EditText
+        android:id="@+id/edt_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:lines="1"
+        app:layout_constraintEnd_toEndOf="@+id/height"
+        app:layout_constraintStart_toStartOf="@+id/height"
+        app:layout_constraintTop_toBottomOf="@+id/height"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="@+id/edt_height"
+        app:layout_constraintStart_toStartOf="@+id/edt_height"
+        app:layout_constraintTop_toBottomOf="@+id/edt_height" />
+
+    <Button
+        android:id="@+id/btn_calculate_volume"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_volume"
+        app:layout_constraintHorizontal_weight="1"/>
+
+    <Button
+        android:id="@+id/btn_calculate_circumference"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_circumference" />
+
+    <Button
+        android:id="@+id/btn_calculate_surface_area"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:text="@string/calculate_surface_area" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/btn_calculates"
+        android:layout_width="0dp"
+        app:flow_horizontalGap="4dp"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btn_calculate_volume,btn_calculate_circumference,btn_calculate_surface_area"
+        app:layout_constraintEnd_toEndOf="@+id/edt_height"
+        app:layout_constraintStart_toStartOf="@+id/edt_height"
+        app:layout_constraintTop_toBottomOf="@+id/edt_height" />
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btn_calculates,btn_save"
+        app:barrierDirection="bottom" />
+
+    <TextView
+        android:id="@+id/tv_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_height"
+        app:layout_constraintStart_toStartOf="@+id/edt_height"
+        app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
