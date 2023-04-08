@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HelloSharedPrefs</string>
+    <string name="black">black</string>
+    <string name="red">red</string>
+    <string name="blue">blue</string>
+    <string name="green">green</string>
+    <string name="count">count</string>
+    <string name="reset">reset</string>
+    <string name="default_value">0</string>
+</resources>
