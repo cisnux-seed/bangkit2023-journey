@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        // menu should be considered as top level destinations.
         profileCircleImageView =
             binding.navView.getHeaderView(0).findViewById(R.id.imageView)
         Glide.with(this)
